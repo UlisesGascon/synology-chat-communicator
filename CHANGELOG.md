@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/ulisesGascon/synology-chat-communicator/compare/v0.0.0...v1.0.0) (2023-02-11)
+
+
+### Features
+
+* added dependencies ([e916bb4](https://github.com/ulisesGascon/synology-chat-communicator/commits/e916bb4ecfebf45257072ca81b72f558ea4d7978))
+* added general utils ([6aa4ca0](https://github.com/ulisesGascon/synology-chat-communicator/commits/6aa4ca093d251de6d23ab14e55251f5d9c71750c))
+* added main business logic ([f7862b9](https://github.com/ulisesGascon/synology-chat-communicator/commits/f7862b9213a81e825a273e9dbeb8fdd251798e36))
+
+
+### Test
+
+* added auto clear mocking rule ([181197b](https://github.com/ulisesGascon/synology-chat-communicator/commits/181197b0556c94c2797b38010364fb4ac5311f48))
+* added Got Mock for Synology API request ([a5e33bf](https://github.com/ulisesGascon/synology-chat-communicator/commits/a5e33bf8c3cd213161aedd38e4ae373e6bab8e7c))
+* added library tests ([176943e](https://github.com/ulisesGascon/synology-chat-communicator/commits/176943e81110dac19897018f8d8bd383c3b3a632))
+* added tests for utils ([63f9fb5](https://github.com/ulisesGascon/synology-chat-communicator/commits/63f9fb5363160ee4edcf3496b33ba2438bbf5dd8))
+
+
+### Other
+
+* added basic documentation ([706e099](https://github.com/ulisesGascon/synology-chat-communicator/commits/706e0993a0b2a8120a9edb50ed237386b5dadd1e))
+
 ## 0.0.0 (2023-02-11)
 
 

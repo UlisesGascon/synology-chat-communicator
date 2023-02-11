@@ -1,6 +1,6 @@
 {
   "name": "synology-chat-communicator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Simple wrapper to send Messages to Synology Chat",
   "main": "src/index.js",
   "scripts": {
