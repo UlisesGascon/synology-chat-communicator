@@ -1,0 +1,23 @@
+{
+  "name": "synology-chat-communicator",
+  "version": "0.0.0",
+  "description": "Simple wrapper to send Messages to Synology Chat",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UlisesGascon/synology-chat-communicator.git"
+  },
+  "keywords": [
+    "synology",
+    "synology-chat"
+  ],
+  "author": "Ulises Gascon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UlisesGascon/synology-chat-communicator/issues"
+  },
+  "homepage": "https://github.com/UlisesGascon/synology-chat-communicator#readme"
+}
