@@ -4,7 +4,10 @@
   "description": "Simple wrapper to send Messages to Synology Chat",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "FORCE_COLOR=3 jest  --verbose",
+    "test:update": "FORCE_COLOR=3 jest --verbose --u",
+    "test:coverage": "FORCE_COLOR=3 jest --verbose  --coverage",
+    "test:watch": "FORCE_COLOR=3 jest --verbose  --watchAll",
   "engines": {
     "node": ">=14.0.0"
   },
