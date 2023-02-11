@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/UlisesGascon/synology-chat-communicator/issues"
   },
-  "homepage": "https://github.com/UlisesGascon/synology-chat-communicator#readme"
+  "homepage": "https://github.com/UlisesGascon/synology-chat-communicator#readme",
+  "devDependencies": {
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
+    "husky": "8.0.3",
+    "jest": "29.4.2",
+    "jest-config": "29.4.2",
+    "standard": "17.0.0",
+    "standard-version": "9.5.0"
+  }
 }
