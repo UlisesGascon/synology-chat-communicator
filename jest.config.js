@@ -1,6 +1,7 @@
 const { defaults } = require('jest-config')
 
 module.exports = {
+  clearMocks: true,
   testPathIgnorePatterns: [
     ...defaults.testPathIgnorePatterns
   ],
