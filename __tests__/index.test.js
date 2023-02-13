@@ -6,37 +6,34 @@ const baseUrl = 'https://demo.com'
 
 describe('synology-chat-communicator', () => {
   describe('configuration', () => {
-    beforeEach(() => {
-      process.env.NODE_TLS_REJECT_UNAUTHORIZED = '1'
-    })
-
-    afterEach(() => {
-      process.env.NODE_TLS_REJECT_UNAUTHORIZED = '1'
-    })
-
-    it('Should disable SSL Validation', () => {
-      expect(process.env.NODE_TLS_REJECT_UNAUTHORIZED).toBe('1')
-      synologyChatCommunicator({
+    it('Should disable SSL Validation', async () => {
+      const { getUsers } = synologyChatCommunicator({
         token,
         baseUrl,
         ignoreSSLErrors: true
       })
-      expect(process.env.NODE_TLS_REJECT_UNAUTHORIZED).toBe('0')
+      await getUsers()
+      expect(got.get.mock.calls[0][1]).toStrictEqual({ https: { rejectUnauthorized: false } })
+      expect(got.get.mock.calls).toHaveLength(1)
     })
 
-    it('Should keep SSL Validation (even as default)', () => {
-      expect(process.env.NODE_TLS_REJECT_UNAUTHORIZED).toBe('1')
-      synologyChatCommunicator({
+    it('Should keep SSL Validation (even as default)', async () => {
+      let { getUsers } = synologyChatCommunicator({
         token,
         baseUrl,
         ignoreSSLErrors: false
       })
-      expect(process.env.NODE_TLS_REJECT_UNAUTHORIZED).toBe('1')
-      synologyChatCommunicator({
+      await getUsers()
+      expect(got.get.mock.calls[0][1]).toStrictEqual({})
+      expect(got.get.mock.calls).toHaveLength(1)
+
+      getUsers = synologyChatCommunicator({
         token,
         baseUrl
-      })
-      expect(process.env.NODE_TLS_REJECT_UNAUTHORIZED).toBe('1')
+      }).getUsers
+      await getUsers()
+      expect(got.get.mock.calls[1][1]).toStrictEqual({})
+      expect(got.get.mock.calls).toHaveLength(2)
     })
   })
 
