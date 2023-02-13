@@ -1,24 +1,24 @@
-const { disableSslRejections, ensureArrayStructure, generateMessagePayload, getUrlByMethod, makePostRequest, makeGetRequest } = require('./utils')
+const { ensureArrayStructure, generateMessagePayload, getUrlByMethod, makePostRequest, makeGetRequest } = require('./utils')
 
 const synologyChatCommunicator = ({ baseUrl, token, ignoreSSLErrors } = {}) => {
   const getRequestUrl = getUrlByMethod(baseUrl, token)
   const chatbotUrl = getRequestUrl('chatbot')
   const usersUrl = getRequestUrl('user_list')
   const channelsUrl = getRequestUrl('channel_list')
-
+  const requestSettings = {}
   if (ignoreSSLErrors) {
-    disableSslRejections()
+    // @SEE: https://github.com/sindresorhus/got/issues/477#issuecomment-682166391
+    requestSettings.https = { rejectUnauthorized: false }
   }
 
   return {
     sendDirectMessage: (users, text, mediaLink) => {
       const usersInScope = ensureArrayStructure(users)
       const payload = generateMessagePayload({ users: usersInScope, text, mediaLink })
-      const requestSettings = { form: { payload } }
-      return makePostRequest(chatbotUrl, requestSettings).then(res => res.data)
+      return makePostRequest(chatbotUrl, { ...requestSettings, form: { payload } }).then(res => res.data)
     },
-    getUsers: () => makeGetRequest(usersUrl).then(res => res.data.users),
-    getChannels: () => makeGetRequest(channelsUrl).then(res => res.data.channels)
+    getUsers: () => makeGetRequest(usersUrl, requestSettings).then(res => res.data.users),
+    getChannels: () => makeGetRequest(channelsUrl, requestSettings).then(res => res.data.channels)
   }
 }
 
