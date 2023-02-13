@@ -1,11 +1,6 @@
 const got = require('got')
 const debug = require('debug')('synology-chat-communicator')
 
-const disableSslRejections = () => {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
-  debug('Environmental variable NODE_TLS_REJECT_UNAUTHORIZED has been disabled')
-}
-
 const ensureArrayStructure = users => Array.isArray(users) ? users : [users]
 
 const generateMessagePayload = ({ users, text, mediaLink }) => {
@@ -46,7 +41,6 @@ const makeRequest = method => async (url, settings = {}) => {
 }
 
 module.exports = {
-  disableSslRejections,
   ensureArrayStructure,
   generateMessagePayload,
   getUrlByMethod,
