@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/ulisesGascon/synology-chat-communicator/compare/v1.0.0...v1.1.0) (2023-02-13)
+
+
+### Features
+
+* Added selective TLS rejection ([0debd42](https://github.com/ulisesGascon/synology-chat-communicator/commits/0debd428a72290d2fcc44bb53a50a9eb128571f9)), closes [/github.com/sindresorhus/got/issues/477#issuecomment-682166391](https://github.com/UlisesGascon//github.com/sindresorhus/got/issues/477/issues/issuecomment-682166391)
+
+
+### Bug Fixes
+
+* added missing dependency in job ([b15fe88](https://github.com/ulisesGascon/synology-chat-communicator/commits/b15fe880eeb7b9ae636e25058fa0629c8abdd8a4))
+
+
+### Test
+
+* refactored to match new SSL/TLS implementation ([cebd965](https://github.com/ulisesGascon/synology-chat-communicator/commits/cebd96568c7235c875657fdc96e4350b58d2fc5f))
+
+
+### Other
+
+* updated to reflect new TLS/SSL approach ([efd701d](https://github.com/ulisesGascon/synology-chat-communicator/commits/efd701dd163edf8433f7e93699d66dfeadc374f4))
+
 ## [1.0.0](https://github.com/ulisesGascon/synology-chat-communicator/compare/v0.0.0...v1.0.0) (2023-02-11)
 
 
