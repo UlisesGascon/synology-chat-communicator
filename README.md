@@ -19,6 +19,9 @@
 
 Simple wrapper to send Messages to [Synology Chat](https://www.synology.com/es-es/dsm/feature/chat)
 
+🌟 If you want a Go version, please check [go-synology-chat](https://github.com/UlisesGascon/go-synology-chat) 🌟
+
+
 ## ❤️ Awesome Features:
 
 
